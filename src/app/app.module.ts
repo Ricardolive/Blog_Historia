@@ -7,6 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { TemaComponent } from './tema/tema.component';
+import { PostagemComponent } from './postagem/postagem.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { CategoriaComponent } from './categoria/categoria.component';
     MenuComponent,
     HomeComponent,
     RodapeComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    TemaComponent,
+    PostagemComponent,
+    SobreNosComponent
   ],
   imports: [
     BrowserModule,
