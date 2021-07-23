@@ -10,6 +10,7 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { TemaComponent } from './tema/tema.component';
 import { PostagemComponent } from './postagem/postagem.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { ContatoComponent } from './contato/contato.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     CategoriaComponent,
     TemaComponent,
     PostagemComponent,
-    SobreNosComponent
+    SobreNosComponent,
+    ContatoComponent
   ],
   imports: [
     BrowserModule,
