@@ -16,86 +16,17 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-          <img src="https://imgur.com/Zfjg0J5.jpg"  style="width:285px; height:180px;" class="card-img-top" alt="">
+      <div class="col-sm-4 mb-4" *ngFor='let item of listaTemas' >
+        <div  class="card" style="width: 18rem;">
+          <img src="{{item.imagem}}"  style="width:285px; height:180px;" class="card-img-top" alt="">
           <div class="card-body">
-            <h5 class="card-title text-center">Suméria</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a routerLink='/postagem' class="btn btn-outline-primary d-flex justify-content-center">Visualizar</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-          <img src="assets\img\greciaFilosofia.jpg"  style="width:285px; height:180px;" class="card-img-top" alt="">
-          <div class="card-body">
-            <h5 class="card-title text-center">Titulo</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a routerLink='/postagem' class="btn btn-outline-primary d-flex justify-content-center">Visualizar</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-          <img src="assets\img\greciaAtenas.jpg"  style="width:285px; height:180px;" class="card-img-top" alt="">
-          <div class="card-body">
-            <h5 class="card-title text-center">Titulo</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
+            <h5 class="card-title text-center">{{item.titulo}}</h5>
+            <p class="card-text text-center">{{item.descricao}}</p>
             <a routerLink='/postagem' class="btn btn-outline-primary d-flex justify-content-center">Visualizar</a>
           </div>
         </div>
       </div>
     </div>
+  </div> 
 
-
-
-
-    <div class="row mt-5">
-      <div class="col-sm-4">
-        <div class="card mb-5" style="width: 18rem;">
-          <img src="assets\img\greciaMapa.jpg"  style="width:285px; height:180px;" class="card-img-top" alt="">
-          <div class="card-body">
-            <h5 class="card-title text-center">Titulo</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a routerLink='/postagem' class="btn btn-outline-primary d-flex justify-content-center">Visualizar</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-          <img src="assets\img\greciaPanteao.jpg"   style="width:285px; height:180px;" class="card-img-top" alt="">
-          <div class="card-body">
-            <h5 class="card-title text-center">Titulo</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a routerLink='/postagem' class="btn btn-outline-primary d-flex justify-content-center">Visualizar</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-          <img src="assets\img\constParthenon.jpg"   style="width:285px; height:180px;" class="card-img-top" alt="">
-          <div class="card-body">
-            <h5 class="card-title text-center">Titulo</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a routerLink='/postagem' class="btn btn-outline-primary d-flex justify-content-center">Visualizar</a>
-          </div>
-        </div>
-      </div>
-    </div>
- 
- 
-  </div>  
 </div>
