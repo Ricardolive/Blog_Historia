@@ -1,15 +1,15 @@
 <div class="container-fluid">
     <div class="row">
       <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-        <a class="navbar-brand" style="color: white;" routerLink="/home">Home</a>
+        <a class="navbar-brand me-5 ms-auto" style="color: white;" routerLink="/home">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+          <ul class="navbar-nav me-auto mb-2 d-flex align-items-center">
             <li class="nav-item">
-              <a class="nav-link active me-5 ms-5" style="color: white;" aria-current="page" routerLink="/categoria">Categorias</a>
+              <a class="nav-link active me-auto ms-5" style="color: white;" aria-current="page" routerLink="/categoria">Categorias</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle me-5 ms-5" style="color: white;" routerLink="" id="navbarDropdown" role="button"
@@ -24,26 +24,43 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link active me-5 ms-5" style="color: white;" aria-current="page" routerLink="/contato">Contato</a>
+              <a class="nav-link active me-3 ms-3" style="color: white;" aria-current="page" routerLink="/contato">Contato</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active me-5 ms-5" style="color: white;" routerLink="/sobreNos">Sobre nós</a>
+              <a class="nav-link active me-auto ms-5" style="color: white;" routerLink="/sobreNos">Sobre nós</a>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link active me-5 ms-5" style="color: white;" routerLink="/novaCategoria">Nova Categoria
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link active me-5 ms-5" style="color: white;" routerLink="/novoTema">Novo Tema</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link active me-5 ms-5" style="color: white;" routerLink="/novaPostagem">Nova Postagem</a>
-            </li>
-            
+            <div  *ngIf='authService.admin()' class="d-flex justify-content-center">
+              <li class="nav-item">
+                <a class="nav-link active me-auto ms-5" style="color: white;" routerLink="/novaCategoria">Nova Categoria
+                </a>
+              </li>
+  
+              <li class="nav-item">
+                <a class="nav-link active me-auto ms-5" style="color: white;" routerLink="/novoTema">Novo Tema</a>
+              </li>
+  
+              <li class="nav-item">
+                <a class="nav-link active me-auto ms-5" style="color: white;" routerLink="/novaPostagem">Nova Postagem</a>
+              </li> 
+      
+            </div>
+ 
           </ul>
+
+          <ul *ngIf='!authService.logado()'>
+            <li class="nav-item">
+              <a class="nav-link active me-5 ms-5" style="color: white;" routerLink="/login">Login</a>
+            </li> 
+          </ul>
+
+          <ul *ngIf='authService.logado()' class="d-flex justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link active me-5 ms-5 " style="color: white;" routerLink="/home" 
+                (click)='sair()'>Sair</a>
+              </li>   
+          </ul>
+
         </div>
       </nav>
     </div>

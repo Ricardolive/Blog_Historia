@@ -16,6 +16,9 @@ import { TemaCreateComponent } from './create/tema-create/tema-create.component'
 import { FormsModule } from '@angular/forms';
 import { CategoriaCreateComponent } from './create/categoria-create/categoria-create.component';
 import { PostagemCreateComponent } from './create/postagem-create/postagem-create.component';
+import { LoginComponent } from './login/login.component';
+import { CadastrarComponent } from './cadastrar/cadastrar.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { PostagemCreateComponent } from './create/postagem-create/postagem-creat
     ContatoComponent,
     TemaCreateComponent,
     CategoriaCreateComponent,
-    PostagemCreateComponent
+    PostagemCreateComponent,
+    LoginComponent,
+    CadastrarComponent
   ],
   imports: [
     BrowserModule,
