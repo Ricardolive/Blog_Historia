@@ -1,5 +1,16 @@
  <div class="container-fluid mt-5" style="background-color: rgba(182, 88, 0, 0.822);">
 
+  <div class="container-fluid d-flex justify-content-center  mt-5"
+    style="background-color: rgba(224, 177, 107, 0.671);">
+    <div class="row my-5">
+
+      <div  class="col-md-12" style="color: white;text-align: center;">
+        <h1>Categorias: </h1>
+      </div>
+ 
+    </div>
+ 
+  </div>
 
      <div class="container">
   
@@ -10,7 +21,13 @@
                <div class="card-body">
                  <h5 class="card-title text-center">{{item.titulo}}</h5>
                  <p class="card-text text-center">{{item.descricao}}</p>
-                 <a routerLink="/tema" class="btn btn-outline-primary d-flex justify-content-center">Visualizar</a>
+                 
+                 <div class="row">
+                   <div class="col-md-12 d-flex justify-content-center mt-4">
+                    <button (click)='verTemas($event)' value='{{item.id}}' class="btn btn-outline-primary w-50">Visualizar</button>
+                   </div>
+                 </div>
+                
                </div>
              </div>
            </div>

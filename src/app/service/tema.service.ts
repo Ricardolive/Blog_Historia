@@ -9,12 +9,19 @@ import { Tema } from '../model/Tema';
 })
 export class TemaService {
 
+  ok: boolean = false
+  pesquisa: string
+
   constructor(private http : HttpClient) { }
 
 
 
 getAllTema(): Observable<Tema[]>{
   return this.http.get<Tema[]>('https://bloghistoriagg.herokuapp.com/temas')
+}
+
+getAllTituloTema(titulo: string): Observable<Tema[]>{
+  return this.http.get<Tema[]>(`https://bloghistoriagg.herokuapp.com/temas/titulo/${titulo}`)
 }
 
 getByIdTema(id: number): Observable<Tema>{
@@ -32,13 +39,6 @@ putTema(tema:Tema): Observable<Tema>{
 deleteTema(id: number){
   return this.http.delete<Tema>(`https://bloghistoriagg.herokuapp.com/temas/delete/${id}`)
 }
-
-
-
-
-
-
-
 
 
 }

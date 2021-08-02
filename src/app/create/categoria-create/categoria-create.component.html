@@ -2,11 +2,20 @@
 
 
 <div class="container-fluid mt-5" style="background-color: rgba(182, 88, 0, 0.822);">
+
+    <div class="container-fluid d-flex justify-content-center  my-5"
+        style="background-color: rgba(224, 177, 107, 0.671);">
+        <div class="row my-5">
+            <div class="col-md-12">
+                <h2 style="color: white;">Nova Categoria</h2>
+            </div>
+        </div>
+    </div>
+
+
     <div class="row d-flex justify-content-center">
-        <div class="col-md-6 mt-5">
-
-            <h3 class="text-center my-5 text-white">Nova Categoria</h3>
-
+        <div class="col-md-6 mt-3">
+  
             <div class="form-group">
                 <label for="titulo">Titulo: </label>
                 <input [(ngModel)]='categoria.titulo'  type="text" class="form-control">
@@ -25,7 +34,7 @@
  
 
             <div class="d-flex justify-content-center">
-                <button class="btn btn-success my-4" (click)='cadastrar()'> Cadastrar </button>
+                <button class="btn btn-primary my-4" (click)='cadastrar()'> Cadastrar </button>
             </div>
 
  

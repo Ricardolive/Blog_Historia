@@ -32,6 +32,10 @@ const routes: Routes = [
         component: TemaComponent
     },
     {
+        path: 'tema/categoria/:id',
+        component: TemaComponent
+    },
+    {
         path: 'postagem',
         component: PostagemComponent
     },

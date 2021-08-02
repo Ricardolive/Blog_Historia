@@ -40,7 +40,7 @@ export class PostagemCreateComponent implements OnInit {
     })
   }
 
-  cadastrar(){
+  publicar(){
 
     this.postagem.tema = this.tema
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{

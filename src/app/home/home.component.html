@@ -1,255 +1,68 @@
-
 <div class="container-fluid" style="background-color: rgba(182, 88, 0, 0.822);">
- 
-    <div class="container-fluid d-flex justify-content-center  mt-5">
-      <div class="row mt-5 mb-3">
-        <div class="col">
-          <h2 style="color: black;margin-top: 50px;">Conheça um pouco sobre a história das civilizações</h2>
-        </div>
+
+  <div class="container-fluid d-flex justify-content-center  mt-5">
+    <div class="row mt-5 mb-3">
+      <div class="col">
+        <h2 style="color: black;margin-top: 50px;">Conheça um pouco sobre a história das civilizações</h2>
       </div>
     </div>
+  </div>
 
-    <div class="row mt-5 d-flex justify-content-start ">
-      <div class="col-md-2 d-flex justify-content-end me-5 ms-5">
-        <h3 >Pesquisar: </h3>
-      </div>
-  
-      <div class="col-md-6 d-flex justify-content-center">
-        <input type="text" class="form-control">
-      </div>
-  
+  <div class="row mt-5 d-flex justify-content-center ms-5  ">
+
+    <div class="col-md-6 d-flex justify-content-center ms-5">
+      <input [(ngModel)]='pesquisa' type="text" class="form-control"
+        placeholder="Digite um tema para pesquisar no site">
     </div>
 
-  
+    <div class="col-md-2 d-flex justify-content-start">
+      <button class="btn btn-primary" (click)='pesquisar()'>Pesquisar</button>
+    </div>
+
+  </div>
+
+
+  <div *ngFor='let item of listaCategoria' class="row">
+
     <div class="container-fluid d-flex justify-content-center mt-5"
       style="background-color: rgba(224, 177, 107, 0.671); color: white;">
       <div class="row my-4">
         <div class="col">
-          <h2>Como era a vida na Idade da Pedra</h2>
+          <h2>{{item.descricao}} </h2>
         </div>
       </div>
     </div>
-  
-    <div class="container-fluid d-flex justify-content-start">
-      <div class="row">
-  
-        <div class="col-sm-6 my-4">
-          <img src="https://imgur.com/KdfLmuG.jpg" class="w-100rem mt-3" alt="...">
-        </div>
-  
-        <div class="col-sm-5 m-5">
-          <h2>Periodo Paleolitico</h2>
-  
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio rem neque minus ratione, saepe eos
-            commodi tenetur voluptate fuga optio sed hic repellat omnis, laboriosam delectus recusandae id deleniti.
-          </p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio rem neque minus ratione, saepe eos
-            commodi tenetur voluptate fuga optio sed hic repellat omnis, laboriosam delectus recusandae id deleniti.
-          </p>
 
-          <button class="btn btn-primary text-white" routerLink=''>Ler mais >></button>
-        </div>
-      </div>
-    </div>
-  
-  
-    <div class="container-fluid d-flex justify-content-center mt-5"
-      style="background-color: rgba(224, 177, 107, 0.671); color: white;">
-      <div class="row my-4">
-        <div class="col">
-          <h2>O dominio da Agricultura e suas Ferramentas </h2>
-        </div>
-      </div>
-    </div>
-  
-    <div class="container-fluid d-flex justify-content-start">
+    <div class="container-fluid">
       <div class="row">
-  
-        <div class="col-sm-5 m-5">
-          <h2>Periodo Neolitico</h2>
-  
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio rem neque minus ratione, saepe eos
-            commodi tenetur voluptate fuga optio sed hic repellat omnis, laboriosam delectus recusandae id deleniti.
-          </p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio rem neque minus ratione, saepe eos
-            commodi tenetur voluptate fuga optio sed hic repellat omnis, laboriosam delectus recusandae id deleniti.
-          </p>
 
-          <button class="btn btn-primary text-white" routerLink='/tema'>Ler mais >></button>
+        <div class="col-md-5 my-4">
+          <img src="{{item.imagem}}" class="w-100rem mt-3" alt="">
         </div>
-  
-        <div class="col-sm-6 my-4">
-          <img src="https://imgur.com/ZeRzLYS.jpg" class="w-100rem mt-3" alt="...">
-        </div>
-  
-      </div>
-    </div>
-  
-  
-  
-    <div class="container-fluid d-flex justify-content-center mt-5"
-      style="background-color: rgba(224, 177, 107, 0.671); color: white;">
-      <div class="row my-4">
-        <div class="col">
-          <h2>A Descoberta dos Metais</h2>
-        </div>
-      </div>
-    </div>
-  
-    <div class="container-fluid d-flex justify-content-start">
-      <div class="row">
-  
-        <div class="col-sm-6 my-4">
-          <img src="https://imgur.com/jWtW94g.jpg" width="650px" height="280px"  class=" mt-3" alt="...">
-        </div>
-  
-        <div class="col-sm-5 m-5">
-          <h2>Idade dos Metais</h2>
-  
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio rem neque minus ratione, saepe eos
-            commodi tenetur voluptate fuga optio sed hic repellat omnis, laboriosam delectus recusandae id deleniti.
-          </p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio rem neque minus ratione, saepe eos
-            commodi tenetur voluptate fuga optio sed hic repellat omnis, laboriosam delectus recusandae id deleniti.
-          </p>
 
-          <button class="btn btn-primary text-white" routerLink='/tema'>Ler mais >></button>
+        <div class="col-md-6 ms-auto">
+          <div class="row">
+            <div class="col d-flex justify-content-center mt-4">
+              <h2>{{item.titulo}}</h2>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-9 d-flex justify-content-end mt-3 ms-auto me-auto">
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit eveniet nam, autem dolor error a voluptate accusamus dignissimos delectus optio alias quae nobis nulla fugit minus cum? Exercitationem, cum optio! AAAA Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus sint itaque illum eum, odio nostrum ab fugit placeat saepe omnis mollitia, ea perspiciatis rerum architecto id dolor. Quia, voluptates sint.</p>    
+            </div>
+          </div>
+           
+          <div class="row">
+            <div class="col d-flex justify-content-center mt-3">
+              <button class="btn btn-primary text-white" value="{{item.id}}" (click)='verCategoria($event)'>Saiba mais >></button>
+            </div>
+          </div>
+            
         </div>
       </div>
     </div>
-  
-  
-  
-    <div class="container-fluid d-flex justify-content-center mt-5"
-      style="background-color: rgba(224, 177, 107, 0.671); color: white;">
-      <div class="row my-4">
-        <div class="col">
-          <h2>A Escrita e o Periodo Antigo</h2>
-        </div>
-      </div>
-    </div>
-  
-    <div class="container-fluid d-flex justify-content-start">
-      <div class="row">
-   
-        <div class="col-sm-5 m-5">
-          <h2>Idade Antiga</h2>
-  
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio rem neque minus ratione, saepe eos
-            commodi tenetur voluptate fuga optio sed hic repellat omnis, laboriosam delectus recusandae id deleniti.
-          </p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio rem neque minus ratione, saepe eos
-            commodi tenetur voluptate fuga optio sed hic repellat omnis, laboriosam delectus recusandae id deleniti.
-          </p>
 
-          <button class="btn btn-primary text-white" routerLink='/tema'>Ler mais >></button>
-        </div>
-  
-        <div class="col-sm-6 my-4">
-          <img src="https://imgur.com/9gHvL4y.jpg" width="600px" class="w-100rem mt-3" alt="...">
-        </div>
-  
-      </div>
-    </div>
-  
-  
-  
-    <div class="container-fluid d-flex justify-content-center mt-5"
-      style="background-color: rgba(224, 177, 107, 0.671); color: white;">
-      <div class="row my-4">
-        <div class="col">
-          <h2>A Era Medieval</h2>
-        </div>
-      </div>
-    </div>
-  
-    <div class="container-fluid d-flex justify-content-start">
-      <div class="row">
-  
-        <div class="col-sm-6 my-4">
-          <img src="https://imgur.com/MCcp8cs.jpg" width="600px" class="w-100rem mt-3" alt="...">
-        </div>
-  
-        <div class="col-sm-5 m-5">
-          <h2>Idade Media</h2>
-  
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio rem neque minus ratione, saepe eos
-            commodi tenetur voluptate fuga optio sed hic repellat omnis, laboriosam delectus recusandae id deleniti.
-          </p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio rem neque minus ratione, saepe eos
-            commodi tenetur voluptate fuga optio sed hic repellat omnis, laboriosam delectus recusandae id deleniti.
-          </p>
+  </div>
 
-          <button class="btn btn-primary text-white" routerLink='/tema'>Ler mais >></button>
-        </div>
-      </div>
-    </div>
-  
-  
-  
-    <div class="container-fluid d-flex justify-content-center mt-5"
-      style="background-color: rgba(224, 177, 107, 0.671); color: white;">
-      <div class="row my-4">
-        <div class="col">
-          <h2>As Grandes Navegações e o Novo mundo</h2>
-        </div>
-      </div>
-    </div>
-  
-    <div class="container-fluid d-flex justify-content-start">
-      <div class="row">
-   
-        <div class="col-sm-5 m-5">
-          <h2>Idade Moderna</h2>
-  
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio rem neque minus ratione, saepe eos
-            commodi tenetur voluptate fuga optio sed hic repellat omnis, laboriosam delectus recusandae id deleniti.
-          </p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio rem neque minus ratione, saepe eos
-            commodi tenetur voluptate fuga optio sed hic repellat omnis, laboriosam delectus recusandae id deleniti.
-          </p>
-
-          <button class="btn btn-primary text-white" routerLink='/tema'>Ler mais >></button>
-        </div>
-  
-        <div class="col-sm-6 my-4">
-          <img src="https://imgur.com/Ei2Lw4i.jpg" width="600px" class="w-100rem mt-3" alt="...">
-        </div>
-  
-      </div>
-    </div>
-  
-  
-  
-    <div class="container-fluid d-flex justify-content-center mt-5"
-      style="background-color: rgba(224, 177, 107, 0.671); color: white;">
-      <div class="row my-4">
-        <div class="col">
-          <h2>As Industrias e o Mundo atual</h2>
-        </div>
-      </div>
-    </div>
-  
-    <div class="container-fluid d-flex justify-content-start">
-      <div class="row">
-  
-        <div class="col-sm-6 my-4">
-          <img src="https://imgur.com/uSJ1BVu.jpg" width="600px" class="w-100rem mt-3" alt="...">
-        </div>
-  
-        <div class="col-sm-5 m-5">
-          <h2>Idade Contemporânea</h2>
-  
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio rem neque minus ratione, saepe eos
-            commodi tenetur voluptate fuga optio sed hic repellat omnis, laboriosam delectus recusandae id deleniti.
-          </p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio rem neque minus ratione, saepe eos
-            commodi tenetur voluptate fuga optio sed hic repellat omnis, laboriosam delectus recusandae id deleniti.
-          </p>
-
-          <button class="btn btn-primary text-white" routerLink='/tema'>Ler mais >></button>
-        </div>
-      </div>
-    </div>
- 
 </div>

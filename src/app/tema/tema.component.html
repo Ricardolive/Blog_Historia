@@ -3,11 +3,30 @@
     <div class="container-fluid d-flex justify-content-center  my-5"
     style="background-color: rgba(224, 177, 107, 0.671);">
     <div class="row my-5">
-      <div class="col-md-12" style="color: white;text-align: center;">
-        <h1>Periodo Neolitico</h1>
-        <h5>Da idade da ferramenta até as grandes civilizações antigas</h5>
+
+      <div *ngIf='!pesqTema' class="col-md-12" style="color: white;text-align: center;">
+        <h1>{{categoria.titulo}}</h1>
+        <h5>{{categoria.descricao}}</h5>
       </div>
+
+      <div *ngIf='pesqTema' class="col-md-12" style="color: white;text-align: center;">
+        <h1>Pesquisar Temas</h1>  
+      </div>
+
     </div>
+ 
+  </div>
+
+  <div class="row mt-5 d-flex justify-content-center ms-5">
+
+    <div class="col-md-6 d-flex justify-content-center ms-5">
+      <input [(ngModel)]='pesquisa' type="text" class="form-control" placeholder="Digite um tema para pesquisar" (change)='onChange()'>
+    </div>
+
+    <div class="col-md-2 d-flex justify-content-start">
+      <button class="btn btn-primary" (click)='findByTituloTema()'>Pesquisar</button>
+    </div>
+
   </div>
 
 
@@ -15,14 +34,16 @@
 
 
   <div class="container">
-    <div class="row">
-      <div class="col-sm-4 mb-4" *ngFor='let item of listaTemas' >
+    <div class="row mt-5">
+      <div class="col-sm-4 mb-4 mt-5" *ngFor='let item of listaTemas' >
         <div  class="card" style="width: 18rem;">
           <img src="{{item.imagem}}"  style="width:285px; height:180px;" class="card-img-top" alt="">
           <div class="card-body">
             <h5 class="card-title text-center">{{item.titulo}}</h5>
             <p class="card-text text-center">{{item.descricao}}</p>
-            <a routerLink='/postagem' class="btn btn-outline-primary d-flex justify-content-center">Visualizar</a>
+            <div class="d-flex justify-content-center">
+              <button routerLink='/postagem' class="btn btn-outline-primary w-50">Visualizar</button>
+            </div>
           </div>
         </div>
       </div>

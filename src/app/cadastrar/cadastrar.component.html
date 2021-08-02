@@ -1,12 +1,20 @@
 
 
-<div class="container-fluid">
-    <div class="container my-5">
+<div class="container-fluid" style="background-color: rgba(182, 88, 0, 0.822);">
+
+    <div class="container-fluid d-flex justify-content-center mt-5" style="background-color: 
+        rgba(224, 177, 107, 0.671);">
+            <div class="row my-5">
+                <div class="col-md-12">
+                    <h2 style="color: white;">Novo Cadastro</h2>
+                </div>
+            </div>
+        </div>
+
+    <div class="container">
         <div class="row  mt-5 d-flex justify-content-center">
-            <div class="col-md-6 my-5 ">
-
-                <h3 class="text-center my-5">Novo Cadastro</h3>
-
+            <div class="col-md-6 my-3 ">
+ 
                 <div class="form-group ">
                     <label for="nome">Nome:</label>
                     <input [(ngModel)]='user.nome' type="text" class="form-control">
@@ -22,14 +30,14 @@
                     <input [(ngModel)]='user.senha' type="password" class="form-control">
                 </div>
 
-                <div class="form-group mt-4">
+                <div class="form-group my-4">
                     <label for="confSenha">Confirmar Senha:</label>
                     <input (input)='confirmSenha($event)' type="password" class="form-control">
                 </div>
  
 
-                <div class="d-flex justify-content-center mt-5">           
-                     <button type="submit" (click)='cadastrar()' class="btn btn-success">Cadastrar</button>
+                <div class="d-flex justify-content-center my-4">           
+                     <button type="submit" (click)='cadastrar()' class="btn btn-primary">Cadastrar</button>
                 </div>
     
 

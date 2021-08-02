@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Postagem } from '../model/Postagem';
 import { PostagemService } from '../service/postagem.service';
+import { TemaService } from '../service/tema.service';
 
 @Component({
   selector: 'app-postagem',
@@ -11,7 +13,7 @@ export class PostagemComponent implements OnInit {
 
   listaPostagem: Postagem[]
 
-  constructor(private postagemService: PostagemService) { }
+  constructor(private postagemService: PostagemService, private temaService: TemaService, private router: Router) { }
 
   ngOnInit(){
 
@@ -24,6 +26,13 @@ export class PostagemComponent implements OnInit {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
         this.listaPostagem = resp
     })
+ }
+
+ verTemas(){
+
+   this.temaService.pesquisa = ''
+   this.temaService.ok = false
+   this.router.navigate(['/tema'])
  }
 
 }
